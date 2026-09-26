@@ -1,0 +1,17 @@
+{
+  "name": "Prestige Insulation",
+  "short_name": "Prestige",
+  "description": "Premium fiberglass and mineral wool insulation supply across all 50 states.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080807",
+  "theme_color": "#c9a04c",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

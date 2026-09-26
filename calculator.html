@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Insulation Calculator — How Many Bags Do You Need? | Prestige Insulation</title>
+  <meta name="description" content="Free insulation bag calculator. Enter your square footage and R-value to instantly find how many bags of fiberglass or mineral wool you need. Covers R-11 through R-49.">
+  <link rel="canonical" href="https://prestigeinsulationco.com/calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Insulation Calculator — How Many Bags Do You Need? | Prestige Insulation">
+  <meta property="og:description" content="Free insulation bag calculator. Enter your square footage and R-value to get an instant bag count for your project.">
+  <meta property="og:image" content="https://prestigeinsulationco.com/assets/social-preview.png">
+  <link rel="icon" href="assets/favicon.svg?v=3" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Insulation Bag Calculator",
+    "url": "https://prestigeinsulationco.com/calculator.html",
+    "applicationCategory": "UtilityApplication",
+    "description": "Free calculator to determine how many bags of fiberglass or mineral wool insulation you need based on square footage and R-value.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+<div id="inquiry-bar" style="background:var(--black);border-bottom:2px solid var(--gold);padding:0;">
+  <div style="display:flex;flex-wrap:wrap;align-items:stretch;max-width:900px;margin:0 auto;">
+    <form id="iq-form" action="https://formspree.io/f/xeebzpyz" method="POST" style="display:flex;flex:1;flex-wrap:wrap;gap:0;min-width:0;">
+      <input type="hidden" name="_next" value="https://prestigeinsulationco.com/thank-you.html">
+      <input type="hidden" name="_subject" value="Quick Inquiry — Prestige Insulation">
+      <input type="tel" name="phone" placeholder="📞  Your phone number" required style="flex:1;min-width:160px;padding:.8rem 1rem;background:rgba(255,255,255,.06);border:none;border-right:1px solid rgba(255,255,255,.08);color:#fff;font-family:inherit;font-size:.92rem;outline:none;" onfocus="this.style.background='rgba(201,160,76,.12)'" onblur="this.style.background='rgba(255,255,255,.06)'">
+      <input type="text" name="order" placeholder="What do you need? (e.g. 40 bags R-21, zip 10001)" style="flex:2;min-width:200px;padding:.8rem 1rem;background:rgba(255,255,255,.06);border:none;border-right:1px solid rgba(255,255,255,.08);color:#fff;font-family:inherit;font-size:.92rem;outline:none;" onfocus="this.style.background='rgba(201,160,76,.12)'" onblur="this.style.background='rgba(255,255,255,.06)'">
+      <button type="submit" style="background:var(--gold);color:#000;font-family:inherit;font-size:.88rem;font-weight:800;padding:.8rem 1.4rem;border:none;cursor:pointer;white-space:nowrap;letter-spacing:.04em;">Get a Quote →</button>
+    </form>
+    <a href="tel:+19294661426" style="display:flex;align-items:center;padding:.8rem 1.2rem;color:var(--gold);text-decoration:none;font-weight:700;font-size:.88rem;white-space:nowrap;border-left:1px solid rgba(255,255,255,.08);">📞 (929) 466-1426</a>
+  </div>
+</div>
+
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img loading="eager" fetchpriority="high" width="200" height="50" src="assets/logo-horizontal.svg" alt="Prestige Insulation">
+    </a>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="request-quote.html" class="nav-cta">Get&nbsp;a&nbsp;Quote</a></li></ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile"><a href="index.html">Home</a><a href="products.html">Products</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="request-quote.html" style="color:var(--gold)">Get a Quote</a></div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Free Tool</span>
+    <h1>Insulation Bag Calculator</h1>
+    <p class="page-hero-sub">Enter your square footage and R-value to get an instant bag count — with a 10% waste buffer included. Works for fiberglass batts and mineral wool.</p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section>
+  <div class="container">
+    <div class="calc-wrap" style="max-width:720px;margin:0 auto;">
+      <form id="calc-form" autocomplete="off">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="calc-sqft">Square Footage to Insulate</label>
+            <input type="number" id="calc-sqft" placeholder="e.g. 1500" min="1" max="100000">
+          </div>
+          <div class="calc-field">
+            <label for="calc-rval">R-Value &amp; Product</label>
+            <select id="calc-rval">
+              <option value="">Select Product</option>
+              <optgroup label="— Fiberglass Batts —">
+                <option value="R11">R-11 · 2×4 Walls</option>
+                <option value="R13-15">R-13 · 15" wide · 2×4 Walls</option>
+                <option value="R15-15">R-15 · 15" wide · 2×4 Walls</option>
+                <option value="R19-15">R-19 · 15" wide · Floors &amp; Crawl Spaces</option>
+                <option value="R21-15">R-21 · 15" wide · 2×6 Walls</option>
+                <option value="R30-16">R-30 · 16" OC · Ceilings &amp; Attics</option>
+                <option value="R38-16">R-38 · 16" OC · Attic Floors</option>
+                <option value="R38-24">R-38 · 24" OC · Attic Floors</option>
+                <option value="R49-16">R-49 · 16" OC · Attics (cold climates)</option>
+                <option value="R49-24">R-49 · 24" OC · Attics (cold climates)</option>
+              </optgroup>
+              <optgroup label="— Mineral Wool —">
+                <option value="RW-AFB">AFB · Walls &amp; Floors</option>
+                <option value="RW-R15">R-15 · Walls (15" wide)</option>
+                <option value="RW-R23">R-23 · Walls &amp; Floors</option>
+                <option value="RW-R30">R-30 · Ceilings</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+      </form>
+
+      <div id="calc-result" class="calc-result" style="display:none;">
+        <div class="calc-out-grid">
+          <div class="calc-out-main">
+            <div class="calc-bags-label">Bags Needed</div>
+            <div class="calc-bags-num"><span id="calc-bags">—</span></div>
+            <div class="calc-bags-extra">With 10% waste allowance: <strong id="calc-bags-extra">—</strong> bags</div>
+          </div>
+          <div class="calc-out-details">
+            <div class="calc-out-row">
+              <span class="calc-out-label">Application</span>
+              <span id="calc-app">—</span>
+            </div>
+            <div class="calc-out-row">
+              <span class="calc-out-label">Coverage / Bag</span>
+              <span><span id="calc-coverage">—</span> sq ft</span>
+            </div>
+            <div class="calc-out-row">
+              <span class="calc-out-label">Product Type</span>
+              <span id="calc-brands-out">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="calc-cta">
+          <a href="request-quote.html" class="btn btn-gold">Get a Quote for These Materials</a>
+          <a href="tel:+19294661426" class="btn btn-outline-dark">Call (929) 466-1426</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="bg-2">
+  <div class="container" style="max-width:860px;">
+    <span class="section-label">How to Use</span>
+    <h2>Three steps to an accurate estimate.</h2>
+    <div class="gold-line"></div>
+    <div class="cards" style="margin-top:3rem;">
+      <div class="card">
+        <div class="card-icon">01</div>
+        <h3>Measure net square footage</h3>
+        <p>Measure the total area to be insulated — wall cavities, attic floor, crawl space, etc. Subtract door and window openings from wall measurements. For attics, measure the floor area, not the roof surface.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">02</div>
+        <h3>Select the right R-value</h3>
+        <p>Choose your product based on climate zone and application. R-13 or R-15 for 2×4 walls, R-19 or R-21 for 2×6 walls, R-30 to R-49 for attics depending on your climate zone and energy code.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">03</div>
+        <h3>Add 10% for waste</h3>
+        <p>The calculator automatically adds a 10% waste buffer — standard for cuts around electrical boxes, blocking, and irregular framing. Order the buffered number to avoid running short on your job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE REFERENCE TABLE -->
+<section>
+  <div class="container" style="max-width:860px;">
+    <span class="section-label">Reference</span>
+    <h2>Coverage by product &amp; R-value.</h2>
+    <div class="gold-line"></div>
+    <p style="color:var(--dim);margin-bottom:2rem;">Coverage figures are typical manufacturer specs. Actual coverage may vary slightly by brand and product line.</p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:.875rem;">
+        <thead>
+          <tr style="border-bottom:2px solid var(--gold);">
+            <th style="text-align:left;padding:.75rem 1rem;font-weight:700;color:var(--black);">R-Value</th>
+            <th style="text-align:left;padding:.75rem 1rem;font-weight:700;color:var(--black);">Application</th>
+            <th style="text-align:left;padding:.75rem 1rem;font-weight:700;color:var(--black);">Spacing</th>
+            <th style="text-align:right;padding:.75rem 1rem;font-weight:700;color:var(--black);">Sq Ft / Bag</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:.75rem 1rem;color:var(--dim);font-weight:600;">R-11</td><td style="padding:.75rem 1rem;color:var(--muted);">2×4 Walls</td><td style="padding:.75rem 1rem;color:var(--muted);">16" OC</td><td style="padding:.75rem 1rem;text-align:right;font-weight:600;">~87</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--off-white);"><td style="padding:.75rem 1rem;color:var(--dim);font-weight:600;">R-13</td><td style="padding:.75rem 1rem;color:var(--muted);">2×4 Walls (15")</td><td style="padding:.75rem 1rem;color:var(--muted);">16" OC</td><td style="padding:.75rem 1rem;text-align:right;font-weight:600;">~40</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:.75rem 1rem;color:var(--dim);font-weight:600;">R-15</td><td style="padding:.75rem 1rem;color:var(--muted);">2×4 Walls (15")</td><td style="padding:.75rem 1rem;color:var(--muted);">16" OC</td><td style="padding:.75rem 1rem;text-align:right;font-weight:600;">~40</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--off-white);"><td style="padding:.75rem 1rem;color:var(--dim);font-weight:600;">R-19</td><td style="padding:.75rem 1rem;color:var(--muted);">Floors &amp; Crawl Spaces</td><td style="padding:.75rem 1rem;color:var(--muted);">16" OC</td><td style="padding:.75rem 1rem;text-align:right;font-weight:600;">~48</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:.75rem 1rem;color:var(--dim);font-weight:600;">R-21</td><td style="padding:.75rem 1rem;color:var(--muted);">2×6 Walls (15")</td><td style="padding:.75rem 1rem;color:var(--muted);">16" OC</td><td style="padding:.75rem 1rem;text-align:right;font-weight:600;">~45</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--off-white);"><td style="padding:.75rem 1rem;color:var(--dim);font-weight:600;">R-30</td><td style="padding:.75rem 1rem;color:var(--muted);">Ceilings &amp; Attics (16" OC)</td><td style="padding:.75rem 1rem;color:var(--muted);">16" OC</td><td style="padding:.75rem 1rem;text-align:right;font-weight:600;">~40</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:.75rem 1rem;color:var(--dim);font-weight:600;">R-38</td><td style="padding:.75rem 1rem;color:var(--muted);">Attic Floors</td><td style="padding:.75rem 1rem;color:var(--muted);">16" or 24" OC</td><td style="padding:.75rem 1rem;text-align:right;font-weight:600;">~32–40</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--off-white);"><td style="padding:.75rem 1rem;color:var(--dim);font-weight:600;">R-49</td><td style="padding:.75rem 1rem;color:var(--muted);">Attics (cold climates)</td><td style="padding:.75rem 1rem;color:var(--muted);">16" or 24" OC</td><td style="padding:.75rem 1rem;text-align:right;font-weight:600;">~32</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:.75rem 1rem;color:var(--dim);font-weight:600;">MW AFB</td><td style="padding:.75rem 1rem;color:var(--muted);">Walls &amp; Floors</td><td style="padding:.75rem 1rem;color:var(--muted);">16" OC</td><td style="padding:.75rem 1rem;text-align:right;font-weight:600;">~40</td></tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--off-white);"><td style="padding:.75rem 1rem;color:var(--dim);font-weight:600;">MW R-23</td><td style="padding:.75rem 1rem;color:var(--muted);">2×6 Walls &amp; Floors</td><td style="padding:.75rem 1rem;color:var(--muted);">16" OC</td><td style="padding:.75rem 1rem;text-align:right;font-weight:600;">~40</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-2">
+  <div class="container" style="max-width:720px;">
+    <span class="section-label">Common Questions</span>
+    <h2>Calculator FAQs.</h2>
+    <div class="gold-line"></div>
+    <div style="margin-top:2.5rem;display:flex;flex-direction:column;gap:1.5rem;">
+      <div style="border-bottom:1px solid var(--border);padding-bottom:1.5rem;">
+        <h3 style="font-size:1rem;margin-bottom:.5rem;">Should I include a waste factor?</h3>
+        <p style="color:var(--muted);font-size:.9rem;margin:0;">Yes — the calculator already adds 10%. This covers cuts around outlets, blocking, and imperfect framing. If your project has a lot of irregular framing or offsets, consider adding another 5%.</p>
+      </div>
+      <div style="border-bottom:1px solid var(--border);padding-bottom:1.5rem;">
+        <h3 style="font-size:1rem;margin-bottom:.5rem;">What's the difference between 15" and 23" wide batts?</h3>
+        <p style="color:var(--muted);font-size:.9rem;margin:0;">15" batts are for 16" on-center framing. 23" batts are for 24" on-center framing. Using the wrong width wastes material and creates voids — always match batt width to your stud spacing.</p>
+      </div>
+      <div style="border-bottom:1px solid var(--border);padding-bottom:1.5rem;">
+        <h3 style="font-size:1rem;margin-bottom:.5rem;">Do I measure gross or net wall area?</h3>
+        <p style="color:var(--muted);font-size:.9rem;margin:0;">Net is more accurate for ordering. Subtract window and door rough openings from your total wall area. For a typical home, doors and windows reduce gross wall area by roughly 10–15%.</p>
+      </div>
+      <div style="padding-bottom:.5rem;">
+        <h3 style="font-size:1rem;margin-bottom:.5rem;">How do I handle multiple assemblies (walls + attic)?</h3>
+        <p style="color:var(--muted);font-size:.9rem;margin:0;">Run the calculator separately for each assembly type — walls use a different R-value than the attic. Add the bag counts together for your total order. We can quote them on a single invoice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>Ready to order?</h2>
+      <p>Send us your bag count, R-value, and zip code. We'll confirm stock and quote you back the same day. Order before 3pm EST for next-business-day delivery.</p>
+      <div class="cta-actions">
+        <a href="request-quote.html" class="btn btn-gold">Get a Quote Online</a>
+        <a href="tel:+19294661426" class="btn btn-outline-light">Call (929) 466-1426</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img loading="lazy" width="180" height="44" src="assets/logo-horizontal.svg" alt="Prestige Insulation">
+        <p>Fiberglass and mineral wool insulation supplied with personal service and next-day delivery across all 50 states.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="calculator.html">Calculator</a></li>
+          <li><a href="service-area.html">Locations</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+19294661426">(929) 466-1426</a></li>
+          <li><a href="mailto:Info@PrestigeInsulationco.com">Info@PrestigeInsulationco.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Prestige Insulation LLC. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
