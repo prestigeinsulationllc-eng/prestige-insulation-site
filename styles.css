@@ -3,3 +3,4 @@
 @media (prefers-reduced-motion: reduce){.reveal{transition:none !important;opacity:1 !important;transform:none !important;}}
 .review,.card,.prod-card,.blog-card{transition:transform .25s ease,box-shadow .25s ease;}
 .review:hover,.card:hover,.prod-card:hover,.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);}
+@media (max-width:900px){.hero-illustration-desktop{display:none}}

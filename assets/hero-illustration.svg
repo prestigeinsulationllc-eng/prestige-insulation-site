@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" fill="none">
+  <g stroke="#c9a04c" stroke-width="1.5" fill="none" opacity="0.9">
+    <path d="M60 260 L300 90 L540 260" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M110 230 L110 470 L490 470 L490 230" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g stroke="#c9a04c" stroke-width="0.75" opacity="0.55">
+    <path d="M140 220 L140 130" stroke-dasharray="3 6"/>
+    <path d="M180 220 L180 155" stroke-dasharray="3 6"/>
+    <path d="M220 220 L220 178" stroke-dasharray="3 6"/>
+    <path d="M260 220 L260 200" stroke-dasharray="3 6"/>
+    <path d="M340 200 L340 178" stroke-dasharray="3 6"/>
+    <path d="M380 220 L380 155" stroke-dasharray="3 6"/>
+    <path d="M420 220 L420 130" stroke-dasharray="3 6"/>
+    <path d="M460 220 L460 108" stroke-dasharray="3 6"/>
+  </g>
+
+  <g opacity="0.85">
+    <rect x="133" y="140" width="14" height="80" rx="5" fill="#c9a04c" opacity="0.28"/>
+    <rect x="133" y="140" width="14" height="80" rx="5" stroke="#c9a04c" stroke-width="0.75"/>
+    <rect x="173" y="165" width="14" height="55" rx="5" fill="#c9a04c" opacity="0.28"/>
+    <rect x="173" y="165" width="14" height="55" rx="5" stroke="#c9a04c" stroke-width="0.75"/>
+    <rect x="373" y="165" width="14" height="55" rx="5" fill="#c9a04c" opacity="0.28"/>
+    <rect x="373" y="165" width="14" height="55" rx="5" stroke="#c9a04c" stroke-width="0.75"/>
+    <rect x="413" y="140" width="14" height="80" rx="5" fill="#c9a04c" opacity="0.28"/>
+    <rect x="413" y="140" width="14" height="80" rx="5" stroke="#c9a04c" stroke-width="0.75"/>
+  </g>
+
+  <g stroke="#c9a04c" stroke-width="1" fill="none" opacity="0.7">
+    <rect x="115" y="320" width="70" height="150" rx="2"/>
+    <line x1="150" y1="320" x2="150" y2="470"/>
+    <line x1="115" y1="390" x2="185" y2="390"/>
+  </g>
+
+  <g stroke="#c9a04c" stroke-width="1" fill="none" opacity="0.6">
+    <rect x="270" y="390" width="60" height="80" rx="2"/>
+    <line x1="300" y1="390" x2="300" y2="470"/>
+  </g>
+
+  <circle cx="300" cy="90" r="3" fill="#c9a04c"/>
+  <circle cx="60" cy="260" r="3" fill="#c9a04c"/>
+  <circle cx="540" cy="260" r="3" fill="#c9a04c"/>
+</svg>
