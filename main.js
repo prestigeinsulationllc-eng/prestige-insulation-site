@@ -1176,14 +1176,7 @@ var schema={
 ],
 "sameAs":[
 "https://prestigeinsulationco.com"
-],
-"aggregateRating":{
-"@type":"AggregateRating",
-"ratingValue":"4.9",
-"reviewCount":"214",
-"bestRating":"5",
-"worstRating":"1"
-}
+]
 },
 {
 "@type":"WebSite",
