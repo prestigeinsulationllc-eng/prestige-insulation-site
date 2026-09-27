@@ -13,18 +13,19 @@
   <rect width="60" height="60" rx="10" fill="#c9a04c"/>
 
   <!-- Black P inside mark -->
-  <text x="30" y="31"
+  <text x="31" y="33"
     text-anchor="middle"
     dominant-baseline="middle"
-    font-family="'Arial Black', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    font-size="38" font-weight="900"
+    font-family="PlayfairLogo, Georgia, serif"
+    font-size="40" font-weight="700"
     fill="#080807">P</text>
 
   <!-- Prestige Insulation — now correctly using embedded Playfair Display -->
   <text x="78" y="30"
     dominant-baseline="middle"
     font-family="PlayfairLogo, Georgia, 'Times New Roman', serif"
-    font-size="27" font-weight="700"
+    font-size="26" font-weight="700"
+    letter-spacing="0.3"
     fill="#080807">Prestige Insulation</text>
 
 </svg>
