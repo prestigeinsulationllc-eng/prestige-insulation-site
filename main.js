@@ -1208,3 +1208,20 @@ s.setAttribute('data-prestige-org-schema','1');
 s.textContent=JSON.stringify(schema);
 document.head.appendChild(s);
 })();
+// Scroll-reveal: subtle fade/slide-in for section-level content
+(function(){
+if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+if (!('IntersectionObserver' in window)) return;
+var targets = document.querySelectorAll('section, .prod-card, .card, .blog-card, .review, .step, article');
+if (!targets.length) return;
+targets.forEach(function(el){ el.classList.add('reveal'); });
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+targets.forEach(function(el){ io.observe(el); });
+})();

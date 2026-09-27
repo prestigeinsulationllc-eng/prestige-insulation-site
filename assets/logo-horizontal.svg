@@ -1,4 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 60" fill="none">
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'PlayfairLogo';
+        src: url(data:font/woff2;base64,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) format('woff2');
+        font-weight: 700;
+      }
+    </style>
+  </defs>
 
   <!-- Gold rounded square mark -->
   <rect width="60" height="60" rx="10" fill="#c9a04c"/>
@@ -11,10 +20,10 @@
     font-size="38" font-weight="900"
     fill="#080807">P</text>
 
-  <!-- Prestige Insulation — single bold line -->
+  <!-- Prestige Insulation — now correctly using embedded Playfair Display -->
   <text x="78" y="30"
     dominant-baseline="middle"
-    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-family="PlayfairLogo, Georgia, 'Times New Roman', serif"
     font-size="27" font-weight="700"
     fill="#080807">Prestige Insulation</text>
 
