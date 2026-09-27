@@ -18,12 +18,14 @@
   <rect width="60" height="60" rx="10" fill="#c9a04c"/>
 
   <!-- Black P inside mark -->
+  <g transform="translate(30,32) scale(1,1.22) translate(-30,-32)">
   <text x="30" y="32"
     text-anchor="middle"
     dominant-baseline="middle"
     font-family="MontserratIcon, 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    font-size="36" font-weight="800"
+    font-size="34" font-weight="800"
     fill="#000000">P</text>
+  </g>
 
   <!-- Prestige Insulation — now correctly using embedded Playfair Display -->
   <text x="78" y="30"
