@@ -1218,3 +1218,58 @@ var io = new IntersectionObserver(function(entries){
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 targets.forEach(function(el){ io.observe(el); });
 })();
+
+// Recently viewed products (localStorage, per-visitor, no backend needed)
+(function(){
+try {
+  var PRODUCT_PAGES = {
+    'r11-insulation.html': 'R-11 Insulation',
+    'r13-insulation.html': 'R-13 Insulation',
+    'r15-insulation.html': 'R-15 Insulation',
+    'r19-insulation.html': 'R-19 Insulation',
+    'r21-insulation.html': 'R-21 Insulation',
+    'r30-insulation.html': 'R-30 Insulation',
+    'r38-insulation.html': 'R-38 Insulation',
+    'r49-insulation.html': 'R-49 Insulation',
+    'mineral-wool-insulation.html': 'Mineral Wool Insulation',
+    'attic-insulation.html': 'Attic Insulation'
+  };
+  var path = window.location.pathname.split('/').pop();
+  var STORAGE_KEY = 'prestige_recently_viewed';
+  var recent = [];
+  try { recent = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e) { recent = []; }
+
+  if (PRODUCT_PAGES[path]) {
+    recent = recent.filter(function(p){ return p !== path; });
+    recent.unshift(path);
+    recent = recent.slice(0, 5);
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(recent)); } catch(e) {}
+  }
+
+  var toShow = recent.filter(function(p){ return p !== path; }).slice(0, 3);
+  if (toShow.length === 0) return;
+
+  var nav = document.querySelector('nav');
+  if (!nav) return;
+
+  var strip = document.createElement('div');
+  strip.setAttribute('aria-label', 'Recently viewed products');
+  strip.style.cssText = 'background:var(--off-white,#f7f6f3);border-bottom:1px solid var(--border,#e8e8e4);padding:.6rem 0;font-size:.8rem;';
+  var inner = document.createElement('div');
+  inner.className = 'container';
+  inner.style.cssText = 'display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;';
+  var label = document.createElement('span');
+  label.textContent = 'Recently viewed:';
+  label.style.cssText = 'color:var(--muted,#5a5a56);font-weight:600;';
+  inner.appendChild(label);
+  toShow.forEach(function(p){
+    var a = document.createElement('a');
+    a.href = '/' + p;
+    a.textContent = PRODUCT_PAGES[p];
+    a.style.cssText = 'color:var(--gold,#8a6a28);text-decoration:none;font-weight:600;';
+    inner.appendChild(a);
+  });
+  strip.appendChild(inner);
+  nav.parentNode.insertBefore(strip, nav.nextSibling);
+} catch(e) {}
+})();
