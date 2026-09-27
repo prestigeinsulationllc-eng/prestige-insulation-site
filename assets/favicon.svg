@@ -1,5 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8c878"/>
+      <stop offset="55%" stop-color="#c9a04c"/>
+      <stop offset="100%" stop-color="#a3792e"/>
+    </linearGradient>
     <style>
       @font-face {
         font-family: 'MontserratIcon';
@@ -8,7 +13,7 @@
       }
     </style>
   </defs>
-  <rect x="0" y="0" width="32" height="32" rx="5" fill="#c9a04c"/>
+  <rect x="0" y="0" width="32" height="32" rx="5" fill="url(#goldGrad)"/>
   <text x="16" y="17.5"
     text-anchor="middle"
     dominant-baseline="middle"

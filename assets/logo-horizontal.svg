@@ -1,5 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 60" fill="none">
   <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8c878"/>
+      <stop offset="55%" stop-color="#c9a04c"/>
+      <stop offset="100%" stop-color="#a3792e"/>
+    </linearGradient>
     <style>
       @font-face {
         font-family: 'MontserratIcon';
@@ -15,7 +20,7 @@
   </defs>
 
   <!-- Gold rounded square mark -->
-  <rect width="60" height="60" rx="10" fill="#c9a04c"/>
+  <rect width="60" height="60" rx="10" fill="url(#goldGrad)"/>
 
   <!-- Black P inside mark -->
   <g transform="translate(30,32) scale(1,1.22) translate(-30,-32)">
