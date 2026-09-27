@@ -5,6 +5,9 @@
       <stop offset="55%" stop-color="#c9a04c"/>
       <stop offset="100%" stop-color="#a3792e"/>
     </linearGradient>
+    <filter id="iconShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
     <style>
       @font-face {
         font-family: 'MontserratIcon';
@@ -13,7 +16,7 @@
       }
     </style>
   </defs>
-  <rect x="0" y="0" width="32" height="32" rx="5" fill="url(#goldGrad)"/>
+  <rect x="0" y="0" width="32" height="32" rx="5" fill="url(#goldGrad)" filter="url(#iconShadow)"/>
   <text x="16" y="17.5"
     text-anchor="middle"
     dominant-baseline="middle"

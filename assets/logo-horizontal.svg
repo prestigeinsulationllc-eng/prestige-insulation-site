@@ -5,6 +5,9 @@
       <stop offset="55%" stop-color="#c9a04c"/>
       <stop offset="100%" stop-color="#a3792e"/>
     </linearGradient>
+    <filter id="iconShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.8" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
     <style>
       @font-face {
         font-family: 'MontserratIcon';
@@ -20,7 +23,7 @@
   </defs>
 
   <!-- Gold rounded square mark -->
-  <rect width="60" height="60" rx="10" fill="url(#goldGrad)"/>
+  <rect width="60" height="60" rx="10" fill="url(#goldGrad)" filter="url(#iconShadow)"/>
 
   <!-- Black P inside mark -->
   <g transform="translate(30,32) scale(1,1.22) translate(-30,-32)">
