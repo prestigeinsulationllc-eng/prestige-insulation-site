@@ -13,3 +13,7 @@
 .stat-huge-label{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim,#999994);}
 @media(max-width:760px){.stat-huge-grid{grid-template-columns:repeat(2,1fr);gap:2.5rem 1.5rem;}}
 .footer-crest{border-top:1px solid rgba(201,160,76,.35);padding-top:2.5rem;margin-top:0;}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px);}
+.mobile-cta-bar{padding-bottom:env(safe-area-inset-bottom,0px);}
+.sticky-cta{padding-bottom:calc(.75rem + env(safe-area-inset-bottom,0px));}
+div[style*="position:sticky;top:0;z-index:9999"]{padding-top:env(safe-area-inset-top,0px);}
