@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" fill="none">
+  <!-- Faint US-shaped bounding guide (abstract, not literal cartography) -->
+  <g opacity="0.9">
+    <!-- Connection lines from central hub -->
+    <g stroke="#c9a04c" stroke-width="1" opacity="0.45">
+      <line x1="300" y1="165" x2="70" y2="75"/>
+      <line x1="300" y1="165" x2="65" y2="225"/>
+      <line x1="300" y1="165" x2="165" y2="235"/>
+      <line x1="300" y1="165" x2="350" y2="115"/>
+      <line x1="300" y1="165" x2="300" y2="85"/>
+      <line x1="300" y1="165" x2="405" y2="225"/>
+      <line x1="300" y1="165" x2="300" y2="265"/>
+      <line x1="300" y1="165" x2="480" y2="295"/>
+      <line x1="300" y1="165" x2="505" y2="95"/>
+      <line x1="300" y1="165" x2="525" y2="75"/>
+    </g>
+    <!-- Secondary cross-connections for network complexity -->
+    <g stroke="#c9a04c" stroke-width="0.6" opacity="0.28" stroke-dasharray="2 4">
+      <line x1="70" y1="75" x2="350" y2="115"/>
+      <line x1="65" y1="225" x2="165" y2="235"/>
+      <line x1="405" y1="225" x2="480" y2="295"/>
+      <line x1="505" y1="95" x2="525" y2="75"/>
+      <line x1="350" y1="115" x2="505" y2="95"/>
+    </g>
+  </g>
+
+  <!-- Central distribution hub -->
+  <g>
+    <circle cx="300" cy="165" r="9" fill="none" stroke="#c9a04c" stroke-width="1.5"/>
+    <circle cx="300" cy="165" r="4" fill="#c9a04c"/>
+  </g>
+
+  <!-- City nodes -->
+  <g fill="#c9a04c">
+    <circle cx="70" cy="75" r="4"/>
+    <circle cx="65" cy="225" r="4"/>
+    <circle cx="165" cy="235" r="4"/>
+    <circle cx="350" cy="115" r="4"/>
+    <circle cx="300" cy="85" r="4"/>
+    <circle cx="405" cy="225" r="4"/>
+    <circle cx="300" cy="265" r="4"/>
+    <circle cx="480" cy="295" r="4"/>
+    <circle cx="505" cy="95" r="4"/>
+    <circle cx="525" cy="75" r="4"/>
+  </g>
+
+  <!-- Subtle outer rings on a few nodes for depth -->
+  <g fill="none" stroke="#c9a04c" stroke-width="0.75" opacity="0.5">
+    <circle cx="525" cy="75" r="8"/>
+    <circle cx="65" cy="225" r="8"/>
+    <circle cx="480" cy="295" r="8"/>
+  </g>
+</svg>
