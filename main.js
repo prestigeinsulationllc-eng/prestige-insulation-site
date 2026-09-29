@@ -1283,7 +1283,14 @@ document.addEventListener('submit', function(e){
   var elapsed = Date.now() - pageLoadTime;
   if (elapsed < 700) {
     e.preventDefault();
+    e.stopImmediatePropagation();
+    e.stopPropagation();
     // Silently ignore - likely a bot. Real users rarely fill a form this fast.
+    // stopImmediatePropagation is critical here: some forms on this site (e.g. the
+    // multi-step quote wizard) also submit via a custom JS fetch() handler attached
+    // to the same 'submit' event. preventDefault alone stops native submission but
+    // NOT that other listener, so without stopImmediatePropagation a fast bot could
+    // still slip through via the fetch() path.
     return false;
   }
 }, true);
