@@ -1273,3 +1273,18 @@ try {
   nav.parentNode.insertBefore(strip, nav.nextSibling);
 } catch(e) {}
 })();
+
+// Time-trap spam protection: block form submissions completed suspiciously fast
+(function(){
+var pageLoadTime = Date.now();
+document.addEventListener('submit', function(e){
+  var form = e.target;
+  if (!form || !form.action || form.action.indexOf('formspree.io') === -1) return;
+  var elapsed = Date.now() - pageLoadTime;
+  if (elapsed < 700) {
+    e.preventDefault();
+    // Silently ignore - likely a bot. Real users rarely fill a form this fast.
+    return false;
+  }
+}, true);
+})();
